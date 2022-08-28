@@ -1,4 +1,5 @@
 import User from "../models/User";
+import Activity from "../models/Activity";
 
 async function getUserMainInfo(id) {
   const res = await fetch(`http://localhost:3000/user/${id}`);
@@ -10,4 +11,10 @@ async function getUserMainInfo(id) {
   );
 }
 
-export { getUserMainInfo };
+async function getUserActivity(id) {
+  const res = await fetch(`http://localhost:3000/user/${id}/activity`);
+  const data = await res.json();
+  return new Activity(data.data.sessions);
+}
+
+export { getUserMainInfo, getUserActivity };
