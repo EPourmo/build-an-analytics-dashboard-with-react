@@ -5,14 +5,24 @@ export default class Performance {
   }
 
   getOrganizedData() {
+    const perfTypeFr = {
+      1: "Cardio",
+      2: "Energie",
+      3: "Endurance",
+      4: "Force",
+      5: "Vitesse",
+      6: "Intensité",
+    };
     const newData = this.perfData.map((obj, index) => {
       if (obj.kind === index + 1) {
         return {
           ...obj,
-          kind: Object.values(this.perfType)[index],
+          kind: Object.values(perfTypeFr)[index],
         };
       }
     });
-    return newData;
+
+    const newDataReverse = newData.reverse();
+    return newDataReverse;
   }
 }

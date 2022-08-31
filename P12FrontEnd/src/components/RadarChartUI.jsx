@@ -26,28 +26,28 @@ export default function RadarChartUI({ userId }) {
 
   const data = [
     {
-      value: 80,
-      kind: "cardio",
-    },
-    {
-      value: 120,
-      kind: "energy",
-    },
-    {
-      value: 140,
-      kind: "endurance",
-    },
-    {
-      value: 50,
-      kind: "strength",
+      value: 90,
+      kind: "Intensité",
     },
     {
       value: 200,
-      kind: "speed",
+      kind: "Vitesse",
     },
     {
-      value: 90,
-      kind: "intensity",
+      value: 50,
+      kind: "Force",
+    },
+    {
+      value: 140,
+      kind: "Endurance",
+    },
+    {
+      value: 120,
+      kind: "Energie",
+    },
+    {
+      value: 80,
+      kind: "Cardio",
     },
   ];
 
@@ -57,9 +57,8 @@ export default function RadarChartUI({ userId }) {
         cx="50%"
         cy="50%"
         outerRadius="60%"
+        innerRadius={15}
         data={data}
-        startAngle={-270}
-        endAngle={90}
         margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
       >
         <PolarGrid radialLines={false} />
@@ -74,9 +73,8 @@ export default function RadarChartUI({ userId }) {
           }}
         />
         <PolarRadiusAxis axisLine={false} tick={false} />
-        {/* <Tooltip /> */}
+        <Tooltip />
         <Radar
-          //   name="Mike"
           dataKey="value"
           stroke="rgba(255, 1, 1, 0.7)"
           fill="rgba(255, 1, 1, 0.7)"
