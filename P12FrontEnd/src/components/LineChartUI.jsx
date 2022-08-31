@@ -10,40 +10,7 @@ import {
   Rectangle,
 } from "recharts";
 
-export default function LineChartUI() {
-  const dataMocked = {
-    sessions: [
-      {
-        day: 1,
-        sessionLength: 30,
-      },
-      {
-        day: 2,
-        sessionLength: 23,
-      },
-      {
-        day: 3,
-        sessionLength: 45,
-      },
-      {
-        day: 4,
-        sessionLength: 50,
-      },
-      {
-        day: 5,
-        sessionLength: 0,
-      },
-      {
-        day: 6,
-        sessionLength: 0,
-      },
-      {
-        day: 7,
-        sessionLength: 60,
-      },
-    ],
-  };
-
+export default function LineChartUI({ dataLine }) {
   function dayOfWeek(dayIndex) {
     if (dayIndex) return ["L", "M", "M", "J", "V", "S", "D"][dayIndex - 1];
   }
@@ -52,7 +19,6 @@ export default function LineChartUI() {
     const { x, y, stroke, payload } = props;
     const dayNumber = payload.value;
     const dayStr = dayOfWeek(dayNumber);
-    // console.log(date);
 
     return (
       <g transform={`translate(${x},${y})`}>
@@ -100,7 +66,7 @@ export default function LineChartUI() {
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={dataMocked.sessions}>
+      <LineChart data={dataLine}>
         <XAxis
           dataKey="day"
           axisLine={false}

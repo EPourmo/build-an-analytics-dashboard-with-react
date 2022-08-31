@@ -1,5 +1,3 @@
-import { getUserActivity } from "../data/userInformation";
-import { useState, useEffect } from "react";
 import {
   BarChart,
   Bar,
@@ -9,66 +7,10 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-  Cell,
 } from "recharts";
-import Activity from "../models/Activity";
 
-const dataMocked = {
-  sessions: [
-    {
-      day: "2020-07-01",
-      kilogram: 80,
-      calories: 240,
-    },
-    {
-      day: "2020-07-02",
-      kilogram: 80,
-      calories: 220,
-    },
-    {
-      day: "2020-07-03",
-      kilogram: 81,
-      calories: 280,
-    },
-    {
-      day: "2020-07-04",
-      kilogram: 81,
-      calories: 290,
-    },
-    {
-      day: "2020-07-05",
-      kilogram: 80,
-      calories: 160,
-    },
-    {
-      day: "2020-07-06",
-      kilogram: 78,
-      calories: 162,
-    },
-    {
-      day: "2020-07-07",
-      kilogram: 76,
-      calories: 390,
-    },
-  ],
-};
-
-export default function BarChartUI({ userId }) {
-  // const [userActivity, setUserActivity] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const data = await getUserActivity(userId);
-  //     setUserActivity(data);
-  //     console.log(data);
-  //   };
-
-  //   fetchData().catch(console.error);
-  // }, [userId]);
-
-  // if (!userActivity) return <div>Loading...</div>;
-
-  function CustomTooltip({ payload, label, active }) {
+export default function BarChartUI({ barData }) {
+  function CustomTooltip({ payload, active }) {
     if (active) {
       const style = {
         display: "flex",
@@ -145,7 +87,7 @@ export default function BarChartUI({ userId }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
-        data={dataMocked.sessions}
+        data={barData}
         barGap={8}
         margin={{
           top: 112.5,

@@ -1,5 +1,3 @@
-import { getUserPerformance } from "../data/userInformation";
-import { useState, useEffect } from "react";
 import {
   Radar,
   RadarChart,
@@ -10,47 +8,7 @@ import {
   Tooltip,
 } from "recharts";
 
-export default function RadarChartUI({ userId }) {
-  const [userPerformance, setUserPerformanceo] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getUserPerformance(userId);
-      setUserPerformanceo(data.getOrganizedData());
-    };
-
-    fetchData().catch(console.error);
-  }, [userId]);
-
-  if (!userPerformance) return <div>Loading...</div>;
-
-  const data = [
-    {
-      value: 90,
-      kind: "Intensité",
-    },
-    {
-      value: 200,
-      kind: "Vitesse",
-    },
-    {
-      value: 50,
-      kind: "Force",
-    },
-    {
-      value: 140,
-      kind: "Endurance",
-    },
-    {
-      value: 120,
-      kind: "Energie",
-    },
-    {
-      value: 80,
-      kind: "Cardio",
-    },
-  ];
-
+export default function RadarChartUI({ radarData }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <RadarChart
@@ -58,7 +16,7 @@ export default function RadarChartUI({ userId }) {
         cy="50%"
         outerRadius="60%"
         innerRadius={15}
-        data={data}
+        data={radarData}
         margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
       >
         <PolarGrid radialLines={false} />
@@ -73,7 +31,7 @@ export default function RadarChartUI({ userId }) {
           }}
         />
         <PolarRadiusAxis axisLine={false} tick={false} />
-        <Tooltip />
+        {/* <Tooltip /> */}
         <Radar
           dataKey="value"
           stroke="rgba(255, 1, 1, 0.7)"
