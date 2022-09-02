@@ -1,24 +1,16 @@
-import { getUserMainInfo } from "../data/userInformation";
-import { useState, useEffect } from "react";
+import Icon from "./Icon.jsx";
 
-export default function InfoCard({ userId }) {
-  const [userInfo, setUserInfo] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getUserMainInfo(userId);
-      setUserInfo(data);
-    };
-
-    fetchData().catch(console.error);
-  }, [userId]);
-
-  if (!userInfo.length) return <div>Loading...</div>;
-
+export default function InfoCard(props) {
+  const { icon, width, height, color, quantity, dataName } = props;
   return (
-    <div className="App">
-      <h1>{userInfo.score}</h1>
-      <p>{userInfo.calorie}</p>
+    <div className="w-[258px] h-[124px] bg-grey rounded-[5px]">
+      <div>
+        <Icon icon={icon} width={width} height={height} color={color} />
+      </div>
+      <div>
+        <p>{quantity}</p>
+        <p>{dataName}</p>
+      </div>
     </div>
   );
 }

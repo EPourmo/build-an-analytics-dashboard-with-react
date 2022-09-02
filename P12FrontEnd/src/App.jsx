@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
-import InfoCard from "./components/InfoCard.jsx";
+import InfoCards from "./components/InfoCards.jsx";
 import Activities from "./components/Activities.jsx";
 import Sessions from "./components/Sessions.jsx";
 import Performances from "./components/Performances.jsx";
 
 function App() {
-  const userId = 12;
+  const userId = 18;
 
   return (
-    <div className="App">
-      <Activities userId={userId} />
+    <div>
+      {/* <Activities userId={userId} />
       <Sessions userId={userId} />
-      <Performances userId={userId} />
+      <Performances userId={userId} /> */}
+
+      <InfoCards userId={userId} />
     </div>
   );
 }
