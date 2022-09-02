@@ -3,45 +3,45 @@ import { useState, useEffect } from "react";
 import RadarChartUI from "./RadarChartUI";
 
 export default function Performances({ userId }) {
-  const [userPerformance, setUserPerformanceo] = useState([]);
+  const [userPerformance, setUserPerformance] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await getUserPerformance(userId);
-      setUserPerformanceo(data.getOrganizedData());
+      setUserPerformance(data.getOrganizedData());
     };
 
     fetchData().catch(console.error);
   }, [userId]);
 
-  if (!userPerformance) return <div>Loading...</div>;
+  if (!userPerformance.length) return <div>Loading...</div>;
 
-  const data = [
-    {
-      value: 90,
-      kind: "Intensité",
-    },
-    {
-      value: 200,
-      kind: "Vitesse",
-    },
-    {
-      value: 50,
-      kind: "Force",
-    },
-    {
-      value: 140,
-      kind: "Endurance",
-    },
-    {
-      value: 120,
-      kind: "Energie",
-    },
-    {
-      value: 80,
-      kind: "Cardio",
-    },
-  ];
+  // const data = [
+  //   {
+  //     value: 90,
+  //     kind: "Intensité",
+  //   },
+  //   {
+  //     value: 200,
+  //     kind: "Vitesse",
+  //   },
+  //   {
+  //     value: 50,
+  //     kind: "Force",
+  //   },
+  //   {
+  //     value: 140,
+  //     kind: "Endurance",
+  //   },
+  //   {
+  //     value: 120,
+  //     kind: "Energie",
+  //   },
+  //   {
+  //     value: 80,
+  //     kind: "Cardio",
+  //   },
+  // ];
 
   const styleLineChart = {
     width: "258px",

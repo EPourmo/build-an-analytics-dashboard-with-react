@@ -13,7 +13,7 @@ export default function InfoCard({ userId }) {
     fetchData().catch(console.error);
   }, [userId]);
 
-  if (!userInfo) return <div>Loading...</div>;
+  if (!userInfo.length) return <div>Loading...</div>;
 
   return (
     <div className="App">
