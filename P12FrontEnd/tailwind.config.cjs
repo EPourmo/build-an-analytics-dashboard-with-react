@@ -20,6 +20,9 @@ module.exports = {
         yellowBg: "#F9CE23",
         pink: "#FD5181",
       },
+      boxShadow: {
+        boxSha: "0 2px 4px rgba(0, 0, 0, 0.0212249)",
+      },
     },
   },
   plugins: [],
