@@ -26,9 +26,14 @@ export default function InfoCards({ userId }) {
         color={item.color}
         quantity={item.quantity}
         dataName={item.tag}
+        bgColor={item.bgColor}
       />
     );
   });
 
-  return <>{cards}</>;
+  return (
+    <div className="w-[258px] h-[613px] flex flex-col justify-between ">
+      {cards}
+    </div>
+  );
 }
