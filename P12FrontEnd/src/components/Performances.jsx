@@ -16,33 +16,6 @@ export default function Performances({ userId }) {
 
   if (!userPerformance.length) return <div>Loading...</div>;
 
-  // const data = [
-  //   {
-  //     value: 90,
-  //     kind: "Intensité",
-  //   },
-  //   {
-  //     value: 200,
-  //     kind: "Vitesse",
-  //   },
-  //   {
-  //     value: 50,
-  //     kind: "Force",
-  //   },
-  //   {
-  //     value: 140,
-  //     kind: "Endurance",
-  //   },
-  //   {
-  //     value: 120,
-  //     kind: "Energie",
-  //   },
-  //   {
-  //     value: 80,
-  //     kind: "Cardio",
-  //   },
-  // ];
-
   const styleLineChart = {
     width: "258px",
     height: "263px",
