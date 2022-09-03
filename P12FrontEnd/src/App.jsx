@@ -13,7 +13,7 @@ function App() {
       <Sessions userId={userId} />
       <Performances userId={userId} /> */}
 
-      <InfoCards userId={userId} />
+      {/* <InfoCards userId={userId} /> */}
     </div>
   );
 }
