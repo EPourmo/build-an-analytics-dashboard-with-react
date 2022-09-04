@@ -56,4 +56,19 @@ export default class User {
       },
     ];
   }
+
+  userScore() {
+    const percentageScore = this.score * 100;
+    const remainingScore = 100 - percentageScore;
+    return [
+      {
+        score: remainingScore,
+        fill: "rgba(0, 0, 0, 0)",
+      },
+      {
+        score: percentageScore,
+        fill: "#FF0000",
+      },
+    ];
+  }
 }
