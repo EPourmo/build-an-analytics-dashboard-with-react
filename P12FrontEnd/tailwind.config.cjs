@@ -22,6 +22,7 @@ module.exports = {
       },
       boxShadow: {
         boxSha: "0 2px 4px rgba(0, 0, 0, 0.0212249)",
+        navShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
       },
     },
   },

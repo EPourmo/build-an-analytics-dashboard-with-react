@@ -5,6 +5,7 @@ import Sessions from "./components/Sessions.jsx";
 import Performances from "./components/Performances.jsx";
 import Welcome from "./components/Welcome.jsx";
 import Score from "./components/Score.jsx";
+import NavBar from "./components/NavBar.jsx";
 
 function App() {
   const userId = 12;
@@ -16,7 +17,8 @@ function App() {
       <Performances userId={userId} /> */}
       {/* <Welcome name="Thomas" /> */}
       {/* <InfoCards userId={userId} /> */}
-      <Score userId={userId} />
+      {/* <Score userId={userId} /> */}
+      <NavBar />
     </div>
   );
 }
