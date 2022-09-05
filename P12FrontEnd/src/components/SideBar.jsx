@@ -1,6 +1,6 @@
 import IconCard from "./IconCard";
 
-export default function IconCards() {
+export default function SideBar() {
   const iconList = [
     {
       id: 1,
@@ -40,8 +40,13 @@ export default function IconCards() {
   });
 
   return (
-    <div className="w-[64px] h-[316px] flex flex-col justify-between items-center ">
-      {icons}
+    <div className="w-[117px] h-screen bg-blackBg shadow-navShadow font-roboto font-medium overflow-hidden flex flex-col justify-between items-center fixed">
+      <div className="h-[316px] flex flex-col justify-between items-center w-4/6 my-auto">
+        {icons}
+      </div>
+      <p className="text-white text-xs rotate-[270deg] mb-auto w-[138px]">
+        Copiryght, SportSee 2020
+      </p>
     </div>
   );
 }
