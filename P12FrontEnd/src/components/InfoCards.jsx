@@ -32,8 +32,10 @@ export default function InfoCards({ userId }) {
   });
 
   return (
-    <div className="w-[258px] h-[613px] flex flex-col justify-between ">
+    <div className="w-full flex justify-between xl:flex-col xl:h-[613px] xl:w-[258px]">
       {cards}
     </div>
   );
 }
+
+// h-[613px]
