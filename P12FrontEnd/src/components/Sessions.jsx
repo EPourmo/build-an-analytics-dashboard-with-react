@@ -15,15 +15,8 @@ export default function Sessions({ userId }) {
 
   if (!userSessions.length) return <div className="loading">Loading...</div>;
 
-  const styleLineChart = {
-    width: "258px",
-    height: "263px",
-    backgroundColor: "#FF0000",
-    borderRadius: "5px",
-  };
-
   return (
-    <div style={styleLineChart}>
+    <div className="w-[258px] h-[263px] bg-red255 rounded-[5px] shadow-boxSha">
       <LineChartUI dataLine={userSessions} />
     </div>
   );

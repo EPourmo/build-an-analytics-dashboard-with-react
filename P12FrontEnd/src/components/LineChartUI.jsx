@@ -35,15 +35,9 @@ export default function LineChartUI({ dataLine }) {
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
-      const styleMinute = {
-        paddingLeft: 7,
-      };
       return (
-        <div className="custom-tooltip">
-          <p
-            className="label"
-            style={styleMinute}
-          >{`${payload[0].value} min`}</p>
+        <div>
+          <p className="text-center p-1.5 text-[8px]">{`${payload[0].value} min`}</p>
         </div>
       );
     }
@@ -83,9 +77,7 @@ export default function LineChartUI({ dataLine }) {
             width: 39,
             height: 25,
             backgroundColor: "#FFF",
-            fontSize: 8,
             outline: "none",
-            fontWeight: "bold",
           }}
         />
         <Legend
@@ -97,7 +89,7 @@ export default function LineChartUI({ dataLine }) {
             width: 150,
             height: 48,
             padding: 0,
-            marginTop: 14,
+            marginTop: 24,
             marginLeft: 34,
             fontSize: 15,
             opacity: 0.5,

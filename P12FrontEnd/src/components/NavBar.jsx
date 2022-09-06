@@ -2,7 +2,7 @@ import logo from "/logo.svg";
 
 export default function NavBar() {
   return (
-    <nav className=" font-roboto  text-2xl w-full h-[91px] bg-blackBg px-6 shadow-navShadow flex  justify-between items-center mx-auto">
+    <nav className=" font-roboto  text-2xl w-full h-[91px] bg-blackBg px-6 shadow-navShadow flex  justify-between items-center mx-auto z-10 relative">
       <a href="#" className="flex items-center">
         <img src={logo} alt="logo" className="mr-2.5" />
         <span className="text-red230">SportSee</span>

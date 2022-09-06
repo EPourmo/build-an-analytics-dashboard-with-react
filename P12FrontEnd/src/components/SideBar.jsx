@@ -40,7 +40,7 @@ export default function SideBar() {
   });
 
   return (
-    <div className="w-[117px] h-screen bg-blackBg shadow-navShadow font-roboto font-medium overflow-hidden flex flex-col justify-between items-center fixed">
+    <div className="w-[117px] h-full bg-blackBg shadow-navShadow font-roboto font-medium overflow-hidden flex flex-col justify-between items-center fixed top-0 left-0 z-0">
       <div className="h-[316px] flex flex-col justify-between items-center w-4/6 my-auto">
         {icons}
       </div>

@@ -12,18 +12,10 @@ import {
 export default function BarChartUI({ barData }) {
   function CustomTooltip({ payload, active }) {
     if (active) {
-      const style = {
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        alignItems: "center",
-        fontWeight: "bold",
-      };
-
       return (
-        <div className="custom-tooltip" style={style}>
-          <p className="label">{`${payload[0].payload.kilogram}kg`}</p>
-          <p className="payload">{`${payload[0].payload.calories}Kcal`}</p>
+        <div className="text-white font-medium text-[7px] h-full relative flex justify-center">
+          <p className="absolute top-1 ">{`${payload[0].payload.kilogram}kg`}</p>
+          <p className="absolute bottom-1">{`${payload[0].payload.calories}Kcal`}</p>
         </div>
       );
     }
@@ -38,7 +30,14 @@ export default function BarChartUI({ barData }) {
 
     return (
       <g transform={`translate(${x},${y})`}>
-        <text x={0} y={0} dy={16} textAnchor="end" fill="#9B9EAC">
+        <text
+          x={0}
+          y={0}
+          dy={16}
+          textAnchor="end"
+          fill="#9B9EAC"
+          className="font-medium font-roboto text-sm"
+        >
           {day}
         </text>
       </g>
@@ -46,39 +45,15 @@ export default function BarChartUI({ barData }) {
   };
 
   function CustomLegend() {
-    const boxStyle = {
-      display: "flex",
-      listStyleType: "disc",
-    };
-
-    const legendWeigth = {
-      marginRight: "32px",
-      color: "#282D30",
-      fontSize: "20px",
-    };
-
-    const legendCalories = {
-      color: "#E60000",
-      fontSize: "20px",
-    };
-
-    const spanWeigth = {
-      color: "#74798C",
-      fontSize: "14px",
-    };
-
-    const spanCalories = {
-      color: "#74798C",
-      fontSize: "14px",
-    };
-
     return (
-      <ul className="customized-legend" style={boxStyle}>
-        <li className="legend-weigth" style={legendWeigth}>
-          <span style={spanWeigth}>Poids (kg)</span>
+      <ul className="flex list-disc ">
+        <li className="mr-8 text-darkGrey text-xl">
+          <span className="text-lightGrey text-sm font-medium">Poids (kg)</span>
         </li>
-        <li className="legend-calories" style={legendCalories}>
-          <span style={spanCalories}> Calories brûlées (kCal)</span>
+        <li className="text-xl text-red230">
+          <span className="text-lightGrey text-sm font-medium">
+            Calories brûlées (kCal)
+          </span>
         </li>
       </ul>
     );
@@ -113,13 +88,14 @@ export default function BarChartUI({ barData }) {
           yAxisId="right"
           orientation="right"
           stroke="#9B9EAC"
-          domain={["dataMin -1", "dataMax +1 "]}
+          domain={["dataMin - 1", "dataMax + 1 "]}
           tickCount={3}
           axisLine={false}
           tickLine={false}
           interval="preserveStartEnd"
           type="number"
           tickSize={43}
+          tick={{ fontSize: 14, fontWeight: 500 }}
         />
         <YAxis yAxisId="left" orientation="left" hide={true} />
         <Tooltip
@@ -128,7 +104,6 @@ export default function BarChartUI({ barData }) {
             height: 63,
             backgroundColor: "#E60000",
             color: "#FFFFFF",
-            fontSize: 7,
             outline: "none",
             padding: 7,
           }}
@@ -140,7 +115,7 @@ export default function BarChartUI({ barData }) {
           align="right"
           verticalAlign="top"
           wrapperStyle={{
-            top: "10px",
+            top: "17px",
             right: "30px",
           }}
         />

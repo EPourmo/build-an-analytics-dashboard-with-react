@@ -13,17 +13,23 @@ function App() {
 
   return (
     <div className="relative">
-      {/* <Activities userId={userId} />
-      <Sessions userId={userId} />
-      <Performances userId={userId} /> */}
-
-      {/* <InfoCards userId={userId} /> */}
-      {/* <Score userId={userId} /> */}
-
       <NavBar />
       <SideBar />
-      <div className="ml-[224px] mt-16">
+      <div className="max-w-[1126px] mt-12 mx-auto">
         <Welcome name="Thomas" />
+        <div className="flex mt-16 justify-between">
+          <div className="w-[835px] font-roboto font-medium">
+            <Activities userId={userId} />
+            <div className="flex justify-between items-center mt-7">
+              <Sessions userId={userId} />
+              <Performances userId={userId} />
+              <Score userId={userId} />
+            </div>
+          </div>
+          <div>
+            <InfoCards userId={userId} />
+          </div>
+        </div>
       </div>
     </div>
   );
