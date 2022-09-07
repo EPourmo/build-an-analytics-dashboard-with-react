@@ -10,7 +10,7 @@ export default function Activities({ userId }) {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getUserActivity(userId);
-      setUserActivity(data.sessions);
+      setUserActivity(data.activity);
     };
     fetchData().catch(console.error);
   }, [userId]);

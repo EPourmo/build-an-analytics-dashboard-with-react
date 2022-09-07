@@ -1,5 +1,9 @@
+/**
+ * Class to create a new activity data
+ */
+
 export default class Activity {
-  constructor(sessions) {
-    this.sessions = sessions;
+  constructor(activity) {
+    this.activity = activity;
   }
 }
