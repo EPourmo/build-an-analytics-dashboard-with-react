@@ -1,4 +1,4 @@
-import { getUserMainInfo } from "../data/userInformation";
+import { getUserMainInfo } from "../service/userInformation";
 import { useState, useEffect } from "react";
 import RadialBarChartUI from "./RadialBarChartUI";
 import Loading from "./Loading";

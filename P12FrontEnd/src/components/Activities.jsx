@@ -1,4 +1,4 @@
-import { getUserActivity } from "../data/userInformation";
+import { getUserActivity } from "../service/userInformation";
 import { useState, useEffect } from "react";
 import BarChartUI from "./BarChartUI.jsx";
 import Loading from "./Loading";

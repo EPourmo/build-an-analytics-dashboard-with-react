@@ -1,4 +1,4 @@
-import { getUserPerformance } from "../data/userInformation";
+import { getUserPerformance } from "../service/userInformation";
 import { useState, useEffect } from "react";
 import RadarChartUI from "./RadarChartUI";
 import Loading from "./Loading";

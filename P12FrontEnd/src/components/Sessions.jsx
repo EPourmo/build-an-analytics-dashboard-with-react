@@ -1,4 +1,4 @@
-import { getUserSessions } from "../data/userInformation";
+import { getUserSessions } from "../service/userInformation";
 import { useState, useEffect } from "react";
 import LineChartUI from "./LineChartUI.jsx";
 import Loading from "./Loading";
