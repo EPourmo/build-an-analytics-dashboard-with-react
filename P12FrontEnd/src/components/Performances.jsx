@@ -17,15 +17,8 @@ export default function Performances({ userId }) {
 
   if (!userPerformance.length) return <Loading />;
 
-  const styleLineChart = {
-    width: "258px",
-    height: "263px",
-    backgroundColor: "#282D30",
-    borderRadius: "5px",
-  };
-
   return (
-    <div className="radar-container" style={styleLineChart}>
+    <div className="w-[258px] h-[263px] bg-darkGrey rounded-[5px]">
       <RadarChartUI radarData={userPerformance} />
     </div>
   );
