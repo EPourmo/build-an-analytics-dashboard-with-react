@@ -14,7 +14,7 @@ export default function RadarChartUI({ radarData }) {
       <RadarChart
         cx="50%"
         cy="50%"
-        outerRadius="60%"
+        outerRadius="73%"
         innerRadius={15}
         data={radarData}
         margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
