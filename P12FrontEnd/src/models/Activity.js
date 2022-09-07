@@ -1,8 +1,12 @@
 /**
- * Class to create a new activity data
+ * Class representing a user activities
  */
 
 export default class Activity {
+  /**
+   * activity data from user
+   * @param {Array} activity
+   */
   constructor(activity) {
     this.activity = activity;
   }

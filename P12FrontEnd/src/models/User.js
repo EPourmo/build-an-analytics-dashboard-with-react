@@ -1,4 +1,13 @@
+/**
+ * Class representing a user main data
+ */
 export default class User {
+  /**
+   * Main user data
+   * @param {String} name
+   * @param {Number} score
+   * @param {Object} keyData
+   */
   constructor(name, score, keyData) {
     this.name = name;
     this.score = score;
@@ -8,6 +17,10 @@ export default class User {
     this.lipid = keyData.lipidCount;
   }
 
+  /**
+   * Get user daily allowance with icon and design properties
+   * @returns {Array} array of objects reprensenting one data type
+   */
   userDailyAllowances() {
     const calorieWithComma = this.calorie
       .toString()
@@ -57,6 +70,10 @@ export default class User {
     ];
   }
 
+  /**
+   * Get user score (and remaining score percentage) with correct format
+   * @returns {Array} array of score and remaining score with color associated
+   */
   userScore() {
     const percentageScore = this.score * 100;
     const remainingScore = 100 - percentageScore;
