@@ -1,5 +1,6 @@
 import { getUserMainInfo } from "../data/userInformation";
 import { useState, useEffect } from "react";
+import Loading from "./Loading";
 
 export default function Welcome({ userId }) {
   const [userName, setUserName] = useState([]);
@@ -13,7 +14,7 @@ export default function Welcome({ userId }) {
     fetchData().catch(console.error);
   }, [userId]);
 
-  if (!userName.length) return <div className="loading">Loading...</div>;
+  if (!userName.length) return <Loading />;
 
   return (
     <div className="font-roboto ">

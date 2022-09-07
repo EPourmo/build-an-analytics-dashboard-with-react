@@ -1,6 +1,7 @@
 import { getUserPerformance } from "../data/userInformation";
 import { useState, useEffect } from "react";
 import RadarChartUI from "./RadarChartUI";
+import Loading from "./Loading";
 
 export default function Performances({ userId }) {
   const [userPerformance, setUserPerformance] = useState([]);
@@ -14,12 +15,11 @@ export default function Performances({ userId }) {
     fetchData().catch(console.error);
   }, [userId]);
 
-  if (!userPerformance.length) return <div>Loading...</div>;
+  if (!userPerformance.length) return <Loading />;
 
   const styleLineChart = {
     width: "258px",
     height: "263px",
-    // backgroundColor: "#FF0000",
     backgroundColor: "#282D30",
     borderRadius: "5px",
   };

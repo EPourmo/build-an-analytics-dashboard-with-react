@@ -1,6 +1,7 @@
 import { getUserMainInfo } from "../data/userInformation";
 import { useState, useEffect } from "react";
 import InfoCard from "./InfoCard";
+import Loading from "./Loading";
 
 export default function InfoCards({ userId }) {
   const [userInfo, setUserInfo] = useState([]);
@@ -14,7 +15,7 @@ export default function InfoCards({ userId }) {
     fetchData().catch(console.error);
   }, [userId]);
 
-  if (!userInfo.length) return <div className="loading">Loading...</div>;
+  if (!userInfo.length) return <Loading />;
 
   const cards = userInfo.map((item) => {
     return (

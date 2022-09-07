@@ -1,6 +1,7 @@
 import { getUserMainInfo } from "../data/userInformation";
 import { useState, useEffect } from "react";
 import RadialBarChartUI from "./RadialBarChartUI";
+import Loading from "./Loading";
 
 export default function Score({ userId }) {
   const [score, setScore] = useState([]);
@@ -14,7 +15,7 @@ export default function Score({ userId }) {
     fetchData().catch(console.error);
   }, [userId]);
 
-  if (!score.length) return <div className="loading">Loading...</div>;
+  if (!score.length) return <Loading />;
 
   return (
     <div className="w-[258px] h-[263px] bg-grey font-roboto relative shadow-boxSha rounded-[5px]">

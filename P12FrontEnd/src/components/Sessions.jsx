@@ -1,6 +1,7 @@
 import { getUserSessions } from "../data/userInformation";
 import { useState, useEffect } from "react";
 import LineChartUI from "./LineChartUI.jsx";
+import Loading from "./Loading";
 
 export default function Sessions({ userId }) {
   const [userSessions, setUserSessions] = useState([]);
@@ -13,7 +14,7 @@ export default function Sessions({ userId }) {
     fetchData().catch(console.error);
   }, [userId]);
 
-  if (!userSessions.length) return <div className="loading">Loading...</div>;
+  if (!userSessions.length) return <Loading />;
 
   return (
     <div className="w-[258px] h-[263px] bg-red255 rounded-[5px] shadow-boxSha">

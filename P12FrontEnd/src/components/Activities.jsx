@@ -1,6 +1,7 @@
 import { getUserActivity } from "../data/userInformation";
 import { useState, useEffect } from "react";
 import BarChartUI from "./BarChartUI.jsx";
+import Loading from "./Loading";
 
 export default function Activities({ userId }) {
   const [userActivity, setUserActivity] = useState([]);
@@ -13,7 +14,7 @@ export default function Activities({ userId }) {
     fetchData().catch(console.error);
   }, [userId]);
 
-  if (!userActivity.length) return <div className="loading">Loading...</div>;
+  if (!userActivity.length) return <Loading />;
 
   return (
     <div className="w-full h-80 bg-grey font-roboto shadow-boxSha rounded-[5px] relative">
