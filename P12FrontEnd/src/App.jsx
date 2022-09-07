@@ -17,7 +17,7 @@ function App() {
       <SideBar />
       <div className="top-32 left-36 right-[27px] absolute">
         <div className=" w-full h-full m-auto max-w-[1126px] mb-4">
-          <Welcome name="Thomas" />
+          <Welcome userId={userId} />
           <div className="flex flex-col mt-16 justify-between items-center xl:flex-row">
             <div className="w-full font-roboto order-1 font-medium xl:order-none xl:w-[835px]">
               <Activities userId={userId} />
