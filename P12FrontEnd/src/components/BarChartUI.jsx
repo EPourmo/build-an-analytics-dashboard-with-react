@@ -8,6 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 export default function BarChartUI({ barData }) {
   function CustomTooltip({ payload, active }) {
@@ -137,3 +138,13 @@ export default function BarChartUI({ barData }) {
     </ResponsiveContainer>
   );
 }
+
+BarChartUI.propTypes = {
+  barData: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string.isRequired,
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};

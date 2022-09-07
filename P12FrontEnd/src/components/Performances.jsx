@@ -2,6 +2,7 @@ import { getUserPerformance } from "../service/userInformation";
 import { useState, useEffect } from "react";
 import RadarChartUI from "./RadarChartUI";
 import Loading from "./Loading";
+import PropTypes from "prop-types";
 
 export default function Performances({ userId }) {
   const [userPerformance, setUserPerformance] = useState([]);
@@ -23,3 +24,7 @@ export default function Performances({ userId }) {
     </div>
   );
 }
+
+Performances.propTypes = {
+  userId: PropTypes.number.isRequired,
+};

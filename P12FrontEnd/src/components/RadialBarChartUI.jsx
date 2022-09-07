@@ -1,4 +1,5 @@
 import { PieChart, Pie, Legend, Cell, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 
 export default function RadialBarChartUI({ dataScore }) {
   function renderLegend(props) {
@@ -55,3 +56,12 @@ export default function RadialBarChartUI({ dataScore }) {
     </ResponsiveContainer>
   );
 }
+
+RadialBarChartUI.propTypes = {
+  dataScore: PropTypes.arrayOf(
+    PropTypes.shape({
+      score: PropTypes.number.isRequired,
+      fill: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

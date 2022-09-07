@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-
+import PropTypes from "prop-types";
 export default function RadarChartUI({ radarData }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -41,3 +41,12 @@ export default function RadarChartUI({ radarData }) {
     </ResponsiveContainer>
   );
 }
+
+RadarChartUI.propTypes = {
+  radarData: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      kind: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

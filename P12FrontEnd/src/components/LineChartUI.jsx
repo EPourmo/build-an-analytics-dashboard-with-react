@@ -3,12 +3,13 @@ import {
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
   Rectangle,
 } from "recharts";
+
+import PropTypes from "prop-types";
 
 export default function LineChartUI({ dataLine }) {
   function dayOfWeek(dayIndex) {
@@ -113,3 +114,12 @@ export default function LineChartUI({ dataLine }) {
     </ResponsiveContainer>
   );
 }
+
+LineChartUI.propTypes = {
+  dataLine: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.number.isRequired,
+      sessionLength: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};

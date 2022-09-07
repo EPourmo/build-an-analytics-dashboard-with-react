@@ -1,4 +1,5 @@
 import Icon from "./Icon.jsx";
+import PropTypes from "prop-types";
 
 export default function InfoCard(props) {
   const { icon, width, height, color, quantity, dataName, bgColor } = props;
@@ -28,3 +29,13 @@ export default function InfoCard(props) {
     </div>
   );
 }
+
+InfoCard.propTypes = {
+  icon: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
+  height: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  quantity: PropTypes.string.isRequired,
+  dataName: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
+};

@@ -1,7 +1,7 @@
 import { getUserMainInfo } from "../service/userInformation";
 import { useState, useEffect } from "react";
 import Loading from "./Loading";
-
+import PropTypes from "prop-types";
 export default function Welcome({ userId }) {
   const [userName, setUserName] = useState([]);
 
@@ -27,3 +27,7 @@ export default function Welcome({ userId }) {
     </div>
   );
 }
+
+Welcome.propTypes = {
+  userId: PropTypes.number.isRequired,
+};

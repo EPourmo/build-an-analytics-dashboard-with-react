@@ -1,4 +1,5 @@
 import Icon from "./Icon.jsx";
+import PropTypes from "prop-types";
 
 export default function IconCard({ icon, width, height }) {
   return (
@@ -7,3 +8,9 @@ export default function IconCard({ icon, width, height }) {
     </div>
   );
 }
+
+IconCard.propTypes = {
+  icon: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+};

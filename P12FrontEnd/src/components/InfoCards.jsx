@@ -2,6 +2,7 @@ import { getUserMainInfo } from "../service/userInformation";
 import { useState, useEffect } from "react";
 import InfoCard from "./InfoCard";
 import Loading from "./Loading";
+import PropTypes from "prop-types";
 
 export default function InfoCards({ userId }) {
   const [userInfo, setUserInfo] = useState([]);
@@ -39,4 +40,6 @@ export default function InfoCards({ userId }) {
   );
 }
 
-// h-[613px]
+InfoCards.propTypes = {
+  userId: PropTypes.number.isRequired,
+};

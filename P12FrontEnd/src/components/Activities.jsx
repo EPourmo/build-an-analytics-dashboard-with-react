@@ -2,6 +2,7 @@ import { getUserActivity } from "../service/userInformation";
 import { useState, useEffect } from "react";
 import BarChartUI from "./BarChartUI.jsx";
 import Loading from "./Loading";
+import PropTypes from "prop-types";
 
 export default function Activities({ userId }) {
   const [userActivity, setUserActivity] = useState([]);
@@ -25,3 +26,7 @@ export default function Activities({ userId }) {
     </div>
   );
 }
+
+Activities.propTypes = {
+  userId: PropTypes.number.isRequired,
+};

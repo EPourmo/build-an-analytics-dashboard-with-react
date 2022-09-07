@@ -2,6 +2,7 @@ import { getUserMainInfo } from "../service/userInformation";
 import { useState, useEffect } from "react";
 import RadialBarChartUI from "./RadialBarChartUI";
 import Loading from "./Loading";
+import PropTypes from "prop-types";
 
 export default function Score({ userId }) {
   const [score, setScore] = useState([]);
@@ -24,3 +25,7 @@ export default function Score({ userId }) {
     </div>
   );
 }
+
+Score.propTypes = {
+  userId: PropTypes.number.isRequired,
+};
