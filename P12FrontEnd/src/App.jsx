@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import InfoCards from "./components/InfoCards.jsx";
 import Activities from "./components/Activities.jsx";
 import Sessions from "./components/Sessions.jsx";
@@ -9,11 +9,15 @@ import NavBar from "./components/NavBar.jsx";
 import SideBar from "./components/SideBar.jsx";
 
 function App() {
-  const userId = 12;
+  const [userId, setUserId] = useState(12);
+
+  const changeUser = () => {
+    setUserId((prevState) => (prevState === 12 ? 18 : 12));
+  };
 
   return (
     <div className="relative">
-      <NavBar />
+      <NavBar changeUser={changeUser} />
       <SideBar />
       <div className="top-32 left-36 right-[27px] absolute">
         <div className=" w-full h-full m-auto max-w-[1126px] mb-4">
