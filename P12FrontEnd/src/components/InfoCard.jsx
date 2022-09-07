@@ -8,9 +8,9 @@ export default function InfoCard(props) {
   };
 
   return (
-    <div className="w-[200px] h-[124px] bg-grey rounded-[5px] font-roboto p-8 flex items-center shadow-boxSha xl:w-[258px]">
+    <div className="w-[200px] h-[124px] bg-grey rounded-[5px] font-roboto p-4 flex items-center shadow-boxSha xl:w-[258px] xl:p-8">
       <div
-        className="w-[60px] h-[60px] rounded-[6px] z-0 flex justify-center items-center mr-6"
+        className="w-[60px] h-[60px] rounded-[6px] z-0 flex justify-center items-center mr-4 xl:mr-6"
         style={style}
       >
         <Icon
