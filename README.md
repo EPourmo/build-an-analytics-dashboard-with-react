@@ -6,9 +6,12 @@ This repo contains all the code source to display SportSee Dashboard. The back e
 - [NodeJS (version 12.18)](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/)
 
-It is highly recommended to use [nvm](https://github.com/nvm-sh/nvm) in order to switch easily NodeJS version.
+It is highly recommended to use [nvm](https://github.com/nvm-sh/nvm) in order to switch easily NodeJS version. Indeed, this project uses Vite and Vite requires Node.js version 14.18+, 16+.
 
 ## 2. Installation
+First of all, clone this repo on your computer
+`git clone `
+
 ### 2.1 Back end
 Clone 
 ### 2.1 Back end
