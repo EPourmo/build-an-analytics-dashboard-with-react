@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 export default function RadialBarChartUI({ dataScore }) {
   function renderLegend(props) {
     const score = props.payload[2].payload.score;
-
     return (
       <div className="w-24 text-center ">
         <p className="text-darkGrey text-[26px] font-bold">{score}%</p>

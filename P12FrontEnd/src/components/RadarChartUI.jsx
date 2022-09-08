@@ -5,7 +5,6 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
   ResponsiveContainer,
-  Tooltip,
 } from "recharts";
 import PropTypes from "prop-types";
 export default function RadarChartUI({ radarData }) {
@@ -31,7 +30,6 @@ export default function RadarChartUI({ radarData }) {
           }}
         />
         <PolarRadiusAxis axisLine={false} tick={false} />
-        {/* <Tooltip /> */}
         <Radar
           dataKey="value"
           stroke="rgba(255, 1, 1, 0.7)"
