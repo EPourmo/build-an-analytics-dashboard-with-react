@@ -10,4 +10,7 @@
 ### 2.1 Front End
 
 
-## 3.Dependencies
+## 3.Technologies
+- Javascript
+- Tailwind CSS
+- React
