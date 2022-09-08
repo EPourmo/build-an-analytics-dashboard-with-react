@@ -12,6 +12,7 @@ It is highly recommended to use [nvm](https://github.com/nvm-sh/nvm) in order to
 
 ## 2. Installation
 First of all, clone this repo on your computer
+
 `git clone https://github.com/EPourmo/OpenClassrooms-EP-projet-12.git`
 
 ### 2.1 Back end
