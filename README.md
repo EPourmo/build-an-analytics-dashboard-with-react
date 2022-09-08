@@ -10,9 +10,12 @@ It is highly recommended to use [nvm](https://github.com/nvm-sh/nvm) in order to
 
 ## 2. Installation
 ### 2.1 Back end
+Clone 
+### 2.1 Back end
+
 
 ### 2.1 Front End
-
+> blockquote
 
 ## 3.Technologies
 - Javascript
