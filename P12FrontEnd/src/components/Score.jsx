@@ -4,12 +4,12 @@ import RadialBarChartUI from "./RadialBarChartUI";
 import Loading from "./Loading";
 import PropTypes from "prop-types";
 
-export default function Score({ userId }) {
+export default function Score({ userId, isAPI }) {
   const [score, setScore] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getUserMainInfo(userId);
+      const data = await getUserMainInfo(userId, isAPI);
       setScore(data.userScore());
     };
 

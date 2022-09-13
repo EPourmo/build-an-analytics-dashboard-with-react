@@ -4,12 +4,12 @@ import InfoCard from "./InfoCard";
 import Loading from "./Loading";
 import PropTypes from "prop-types";
 
-export default function InfoCards({ userId }) {
+export default function InfoCards({ userId, isAPI }) {
   const [userInfo, setUserInfo] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getUserMainInfo(userId);
+      const data = await getUserMainInfo(userId, isAPI);
       setUserInfo(data.userDailyAllowances());
     };
 

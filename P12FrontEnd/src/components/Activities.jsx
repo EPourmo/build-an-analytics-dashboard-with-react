@@ -4,12 +4,12 @@ import BarChartUI from "./BarChartUI.jsx";
 import Loading from "./Loading";
 import PropTypes from "prop-types";
 
-export default function Activities({ userId }) {
+export default function Activities({ userId, isAPI }) {
   const [userActivity, setUserActivity] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getUserActivity(userId);
+      const data = await getUserActivity(userId, isAPI);
       setUserActivity(data.activity);
     };
     fetchData().catch(console.error);

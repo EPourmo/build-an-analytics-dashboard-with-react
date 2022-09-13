@@ -4,12 +4,12 @@ import RadarChartUI from "./RadarChartUI";
 import Loading from "./Loading";
 import PropTypes from "prop-types";
 
-export default function Performances({ userId }) {
+export default function Performances({ userId, isAPI }) {
   const [userPerformance, setUserPerformance] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getUserPerformance(userId);
+      const data = await getUserPerformance(userId, isAPI);
       setUserPerformance(data.getOrganizedData());
     };
 

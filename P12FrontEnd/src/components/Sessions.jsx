@@ -4,12 +4,12 @@ import LineChartUI from "./LineChartUI.jsx";
 import Loading from "./Loading";
 import PropTypes from "prop-types";
 
-export default function Sessions({ userId }) {
+export default function Sessions({ userId, isAPI }) {
   const [userSessions, setUserSessions] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getUserSessions(userId);
+      const data = await getUserSessions(userId, isAPI);
       setUserSessions(data.sessions);
     };
     fetchData().catch(console.error);

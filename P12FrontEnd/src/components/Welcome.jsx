@@ -2,12 +2,12 @@ import { getUserMainInfo } from "../service/userInformation";
 import { useState, useEffect } from "react";
 import Loading from "./Loading";
 import PropTypes from "prop-types";
-export default function Welcome({ userId }) {
+export default function Welcome({ userId, isAPI }) {
   const [userName, setUserName] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getUserMainInfo(userId);
+      const data = await getUserMainInfo(userId, isAPI);
       setUserName(data.name);
     };
 
